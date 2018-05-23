@@ -11,6 +11,5 @@
 
 - name: Ensure EPEL Repos are installed
   yum:
-    name: epel_release
+    name: epel-release
     state: latest
-  
