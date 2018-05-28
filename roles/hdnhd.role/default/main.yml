@@ -1,0 +1,4 @@
+---
+app: https://github.com/automaticdavid/demoapp.git
+ver: v1.0
+state: present
