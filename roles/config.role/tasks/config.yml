@@ -18,3 +18,8 @@
   yum:
     name: python-pip
     state: present
+  with_items:
+    - python-pip
+    - libSM
+    - libXext
+    - libXrender
