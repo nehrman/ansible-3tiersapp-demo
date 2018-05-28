@@ -13,3 +13,8 @@
   yum:
     name: epel-release
     state: latest
+
+- name: Ensure Pre Reqs Packages are present
+  yum:
+    name: python-pip
+    state: present

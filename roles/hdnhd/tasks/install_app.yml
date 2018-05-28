@@ -1,0 +1,38 @@
+---
+- name: create temporary directory to get app
+  tempfile:
+    state: directory
+    suffix: app
+  register: r_tempfile
+  connection: local
+  run_once: yes
+  become: no
+
+- name: git clone the app
+  git:
+    repo: "{{ app }}"
+    version: "{{ ver }}"
+    dest: "{{ r_tempfile.path }}"
+  connection: local
+  run_once: yes
+  become: no
+
+- name: copy app to nodes
+  copy:
+    src: "{{ r_tempfile.path }}/"
+    dest: /app/
+  become: yes
+
+- name: pip install requirements
+  pip:
+    requirements: /app/requirements.txt
+    extra_args: --no-cache-dir
+  become: yes
+
+- name: start gunicorn
+  command: nohup gunicorn -b 0.0.0.0:80 app:app &
+  args:
+    chdir: /app/app
+  async: 1000
+  poll: 0
+  become: yes
