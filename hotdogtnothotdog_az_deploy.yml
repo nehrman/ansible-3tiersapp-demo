@@ -8,9 +8,9 @@
     - name: Ensure Pre Reqs Packages are present
       include_role:
         name: config.role
-        tasks_from: main.yml
+        tasks_from: config.yml
 
     - name: Ensure App is present
       include_role:
         name: hdnhd.role
-        tasks_from: main.yml
+        tasks_from: install_app.yml
