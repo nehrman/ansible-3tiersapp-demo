@@ -16,7 +16,7 @@
 
 - name: Ensure Pre Reqs Packages are present
   yum:
-    name: python-pip
+    name: "{{ item }}"
     state: present
   with_items:
     - python-pip
