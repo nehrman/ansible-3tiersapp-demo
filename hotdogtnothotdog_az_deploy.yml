@@ -5,12 +5,12 @@
 
   tasks:
 
-    -name: Ensure Pre Reqs Packages are present
+    - name: Ensure Pre Reqs Packages are present
       include_role:
         - name: config.role
           tasks_from: main.yml
 
-    -name: Ensure App is present
+    - name: Ensure App is present
       include_role:
         - name: hdnhd.role
           tasks_from: main.yml
