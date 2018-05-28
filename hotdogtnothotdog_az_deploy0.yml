@@ -1,23 +1,8 @@
 ---
-# - hosts: localhost
-#   gather_facts: false
-  # roles:
-  #   - osp_facts
-
-# - hosts: frontends
-#   become: yes
-#   roles:
-#     - config.role
-#     - haproxy.role
-
-- hosts: application_web
+- name: Deploy Hot Dog Not Hot Dog App
+  hosts: application_web
   become: yes
-  roles:
+  include_role:
+    - name:
     - config.role
-    - tomcat.role
-
-- hosts: application_db
-  become: yes
-  roles:
-    - config.role
-    - postgresql.role
+    - hdnhd.role
