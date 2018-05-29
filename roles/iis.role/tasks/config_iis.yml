@@ -15,3 +15,13 @@
     binding: 80
     physical_path: 'c:\app\app\'
     state: present
+
+- name: Ensure App Web Site is well configured
+  win_dsc:
+    resource_name: xIISModule
+    ensure: present
+    name: 'app'
+    path: 'c:\python36\python.exe|c:\python36\lib\site-packages\wfastcgi.py'
+    requestpath: '*'
+    SiteName: app
+    ModuleType: fastcgimodule
