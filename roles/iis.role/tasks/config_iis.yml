@@ -65,8 +65,8 @@
     resource_name: xWebConfigKeyValue
     ensure: present
     Configsection: appsettings
-    # key: 'PYTHONPATH'
-    # value: 'c:\python36\lib\site-packages\'
+    key: 'PYTHONPATH'
+    value: 'c:\python36\lib\site-packages\'
     key: 'WSGI_HANDLER'
     value: 'app.app'
     websitepath: 'iis:sites\app'
