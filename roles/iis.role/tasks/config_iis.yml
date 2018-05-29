@@ -9,6 +9,17 @@
     name: dsc-service
     state: present
 
+- name: Download xWebAdministration DSC module
+  win_get_url:
+    url: 'https://gallery.technet.microsoft.com/xWebAdministration-Module-3c8bb6be/file/135740/1/xWebAdministration_1.3.2.4.zip'
+    dest: 'c:\'
+
+- name: Unzip xWebAdministration DSC module
+  win_unzip:
+    src: 'c:\xWebAdministration_1.3.2.4.zip'
+    dest: '$env:ProgramFiles\WindowsPowerShell\Modules'
+    creates: '$env:ProgramFiles\WindowsPowerShell\Modules\xWebAdministration_1.3.2.4'
+
 - name: Ensure App Web Site directory is present
   win_file:
     path: 'c:\app\app'
