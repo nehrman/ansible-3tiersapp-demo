@@ -1,4 +1,9 @@
 ---
+- name: Ensure wFastCGI is enabled
+  win_shell: wfastcgi-enable >> c:\logs\wfastcgi_ok.log
+  args:
+    creates: 'c:\logs\wfastcgi_ok.log' 
+
 - name: Ensure IIS and sub features are present
   win_features:
     name: "web-server, web-cgi, web-default-doc, web-dir-browsing, web-http-errors, web-static-content, web-http-logging, web-stat-compression, web-filtering"
