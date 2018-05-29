@@ -1,5 +1,4 @@
 ---
-
 - name: Ensure Packages required are installed
   win_chocolatey:
     name: "{{ item.key }}"
