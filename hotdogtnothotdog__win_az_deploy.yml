@@ -10,6 +10,11 @@
         name: config.role
         tasks_from: config_win.yml
 
+    - name: Ensure IIS is present
+      include_role:
+        name: iis.role
+        tasks_from: install_iis.yml
+
     # - name: Ensure App is present
     #   include_role:
     #     name: hdnhd.role
