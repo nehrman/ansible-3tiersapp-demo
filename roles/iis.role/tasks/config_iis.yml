@@ -16,7 +16,7 @@
     physical_path: 'c:\app\app\'
     state: present
 
-- name: Ensure App Web Site is well configured
+- name: Ensure App Web Site Module is well configured
   win_dsc:
     resource_name: xIISModule
     ensure: present
