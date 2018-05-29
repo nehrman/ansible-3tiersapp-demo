@@ -34,9 +34,12 @@
     resource_name: xWebSite
     ensure: present
     name: 'app'
-    physicalpath: 'c:\app\app\'
-    port: 80
     state: started
+    physicalpath: 'c:\app\app\'
+    BindingInfo:
+      - protocol: http
+        port: 80
+        ipaddress: '*'
 
 - name: Ensure App Web Site Module is well configured
   win_dsc:
