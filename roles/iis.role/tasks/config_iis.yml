@@ -9,12 +9,24 @@
     path: 'c:\app\app'
     state: directory
 
-- name: Ensure App web site is present
-  win_iis_website:
-    name: app
-    binding: 80
-    physical_path: 'c:\app\app\'
-    state: present
+# - name: Ensure App web site is present
+#   win_iis_website:
+#     name: app
+#     binding: 80
+#     physical_path: 'c:\app\app\'
+#     state: present
+
+- name: Ensure Default Web Site is absent
+  win_dsc:
+    resource_name: xWebSite
+    ensure: absent
+    name: 'Default Web Site'
+
+- name: Ensure App Web Site is present
+  win_dsc:
+    resource_name: xWebSite
+    ensure: present
+    name: 'app'
 
 - name: Ensure App Web Site Module is well configured
   win_dsc:
