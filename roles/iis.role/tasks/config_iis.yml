@@ -12,7 +12,7 @@
 - name: Unzip xWebAdministration DSC module
   win_unzip:
     src: 'c:\xWebAdministration_1.3.2.4.zip'
-    dest: 'c:\ProgramFiles\WindowsPowerShell\Modules\'
+    dest: 'c:\Program Files\WindowsPowerShell\Modules\'
     creates: 'c:\Program Files\WindowsPowerShell\Modules\xWebAdministration_1.3.2.4'
     delete_archive: yes
 
