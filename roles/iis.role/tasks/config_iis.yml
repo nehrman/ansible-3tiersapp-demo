@@ -56,5 +56,6 @@
     name: 'app'
     path: 'c:\python36\python.exe|c:\python36\lib\site-packages\wfastcgi.py'
     requestpath: '*'
+    verb: '*'
     SiteName: app
     ModuleType: fastcgimodule
