@@ -7,7 +7,7 @@
     install_args:
       - TargetDir: "{{ item.value.dir}}"
       - InstallAllUsers: "{{ item.value.allusers }}"
-    state: present
+    state: absent
   loop: "{{ lookup('dict',packages)}}"
 
 - name: Ensure Environment Variables are set correctly
