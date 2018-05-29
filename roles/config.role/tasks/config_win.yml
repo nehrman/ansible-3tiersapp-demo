@@ -18,6 +18,6 @@
       - 'c:\Program Files\git'
 
 - name: Ensure Python Modules are present
-  win_shell: pip install flask wfastcgi flask_uploads wtforms keras tensorflow numpy imutils opencv-python
+  win_shell: pip install flask wfastcgi flask_uploads wtforms keras tensorflow numpy imutils opencv-python >> c:\requirements_ok.log
   args:
-    creates: 'c:\requirements_ok.txt'
+    creates: 'c:\requirements_ok.log'
