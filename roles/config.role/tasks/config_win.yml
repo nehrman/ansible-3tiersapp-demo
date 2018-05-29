@@ -16,20 +16,6 @@
       - 'c:\python36'
       - 'c:\python36\Scripts'
 
-# - name: Ensure Python Modules required are present
-#   pip:
-#     name: "{{ item }}"
-#   with_items:
-#     - flask
-#     - flask_upload
-#     - flask_wtf
-#     - wtforms
-#     - keras
-#     - tensorflow
-#     - numpy
-#     - imutils
-#     - opencv-python
-
 - name: Ensure Python Modules are present
   win_shell: pip install flask wfastcgi flask_uploads flask_upload wtforms keras tensorflow numpy imutils opencv-python
   args:
