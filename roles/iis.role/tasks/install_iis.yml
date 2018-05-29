@@ -11,3 +11,4 @@
   win_shell: wfastcgi-enable >> c:\logs\wfastcgi_ok.log
   args:
     creates: 'c:\logs\wfastcgi_ok.log'
+  become: yes
