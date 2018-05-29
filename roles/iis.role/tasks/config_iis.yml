@@ -68,5 +68,5 @@
     key: 'PYTHONPATH'
     value: 'c:\python36\lib\site-packages\'
     key: 'WSGI_HANDLER'
-    vaalue: 'app.app'
+    value: 'app.app'
     websitepath: 'c:\app\app\'
