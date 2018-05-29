@@ -67,8 +67,8 @@
     Configsection: appsettings
     key:
       - 'PYTHONPATH'
-        'WSGI_HANDLER'
+      - 'WSGI_HANDLER'
     value:
       - 'c:\python36\lib\site-packages\'
-        'app.app'
+      - 'app.app'
     websitepath: 'iis:sites\app'
