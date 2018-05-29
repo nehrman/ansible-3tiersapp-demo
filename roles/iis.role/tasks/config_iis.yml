@@ -59,3 +59,14 @@
     verb: '*'
     SiteName: app
     ModuleType: FastCgiModule
+
+- name: Ensure Key/Value are well configured for App
+  win_dsc:
+    resource_name: xWebConfigKeyValue
+    ensure: present
+    Configsection: appsettings
+    key: 'PYTHONPATH'
+    value: 'c:\python36\lib\site-packages\'
+    key: 'WSGI_HANDLER'
+    vaalue: 'app.app'
+    websitepath: 'c:\app\app\'
