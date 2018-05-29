@@ -33,9 +33,9 @@
   win_dsc:
     resource_name: xWebSite
     ensure: present
-    name: 'app'
+    name: app
     state: started
-    physicalpath: 'c:\app\app\'
+    physicalpath: c:\app\app\
     BindingInfo:
       - protocol: http
         port: 80
