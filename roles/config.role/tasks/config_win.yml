@@ -15,6 +15,7 @@
     elements:
       - 'c:\python36'
       - 'c:\python36\Scripts'
+      - 'c:\Program Files\git'
 
 - name: Ensure Python Modules are present
   win_shell: creates="requirements_ok.txt" pip install flask wfastcgi flask_uploads wtforms keras tensorflow numpy imutils opencv-python
