@@ -24,8 +24,10 @@
 - name: Ensure Default Web Site is absent
   win_dsc:
     resource_name: xWebSite
-    ensure: absent
+    ensure: present
     name: 'Default Web Site'
+    state: stopped
+    physicalpath: 'c:\inetpub\wwwroot\'
 
 - name: Ensure App Web Site is present
   win_dsc:
