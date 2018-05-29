@@ -69,4 +69,4 @@
     value: 'c:\python36\lib\site-packages\'
     key: 'WSGI_HANDLER'
     value: 'app.app'
-    websitepath: 'c:\app\app\'
+    websitepath: 'app'
