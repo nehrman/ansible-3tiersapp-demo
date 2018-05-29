@@ -1,0 +1,29 @@
+---
+# - name: Remove old repos
+#   shell: rm /etc/yum.repos.d/*.repo
+#
+# - name: Yum repository configuration for instances
+#   copy:
+#      src: files/internal.repo
+#      dest: /etc/yum.repos.d/internal.repo
+#      mode: 0644
+#      backup: yes
+
+- name: Ensure Python 3.6.5 is installed
+  win_chocolatey:
+    name: python
+    version: '3.6.5'
+    install_args:
+      - TargetDir: 'c:\Python36'
+      - InstallAllUsers: '1'
+    state: present
+
+# - name: Ensure Pre Reqs Packages are present
+#   yum:
+#     name: "{{ item }}"
+#     state: present
+#   with_items:
+#     - python-pip
+#     - libSM
+#     - libXext
+#     - libXrender
