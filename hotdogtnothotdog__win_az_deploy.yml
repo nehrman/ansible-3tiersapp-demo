@@ -1,6 +1,6 @@
 ---
 - name: Deploy Hot Dog Not Hot Dog App
-  hosts: application_web
+  hosts: windows
   become: yes
 
   tasks:
@@ -8,9 +8,9 @@
     - name: Ensure Pre Reqs Packages are present
       include_role:
         name: config.role
-        tasks_from: config.yml
+        tasks_from: config_win.yml
 
-    - name: Ensure App is present
-      include_role:
-        name: hdnhd.role
-        tasks_from: install_app.yml
+    # - name: Ensure App is present
+    #   include_role:
+    #     name: hdnhd.role
+    #     tasks_from: install_app.yml
