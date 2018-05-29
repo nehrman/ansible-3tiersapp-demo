@@ -1,6 +1,6 @@
 ---
 packages:
-  pip:
+  python:
     dir: 'c:\python36\'
     allusers: 1
     version: '3.6.5'
