@@ -1,0 +1,17 @@
+---
+- name: Ensure Default Web Site is not present
+  win_iis_website:
+    name: 'Default Web Site'
+    state: absent
+
+- name: Ensure App Web Site directory is present
+  win_file:
+    path: 'c:\app\app'
+    state: directory
+
+- name: Ensure App web site is present
+  win_iis_website:
+    name: app
+    binding: 80
+    physical_path: 'c:\app\app\'
+    state: present
