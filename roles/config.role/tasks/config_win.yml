@@ -31,7 +31,7 @@
 #     - opencv-python
 
 - name: Ensure Python Modules are present
-  win_shell: pip install flask wfastcgi 
+  win_shell: pip install flask wfastcgi flask_upload
   args:
     chdir: 'c:\python36\Scripts'
   create_file: 'c:\python36\requirements_ok.txt'
