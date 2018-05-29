@@ -17,19 +17,7 @@
       - 'c:\python36\Scripts'
 
 - name: Ensure Python Modules are present
-  win_shell: pip install flask wfastcgi flask_uploads flask_upload wtforms keras tensorflow numpy imutils opencv-python
+  win_shell: pip install flask wfastcgi flask_uploads wtforms keras tensorflow numpy imutils opencv-python
   args:
     chdir: 'c:\python36\Scripts'
   create_file: 'c:\python36\requirements_ok.txt'
-
-
-
-# - name: Ensure Pre Reqs Packages are present
-#   yum:
-#     name: "{{ item }}"
-#     state: present
-#   with_items:
-#     - python-pip
-#     - libSM
-#     - libXext
-#     - libXrender
