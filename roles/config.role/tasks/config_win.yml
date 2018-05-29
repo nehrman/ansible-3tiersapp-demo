@@ -1,14 +1,14 @@
 ---
 
-# - name: Ensure Python 3.6.5 is installed
-#   win_chocolatey:
-#     name: python
-#     version: '3.6.5'
-#     install_args:
-#       - TargetDir: 'c:\Python36'
-#       - InstallAllUsers: '1'
-#     state: present
-#   with_items:
+- name: Ensure Packages required are installed
+  win_chocolatey:
+    name: "{{ item.key }}"
+    version: "{{ item.value.version }}"
+    install_args:
+      - TargetDir: "{{ item.value.dir}}"
+      - InstallAllUsers: "{{ item.value.allusers }}"
+    state: present
+  loop: "{{ lookup('dict',packages)}}"
 
 - name: Ensure Environment Variables are set correctly
   win_path:
