@@ -29,13 +29,6 @@
 #     state: stopped
 #     physicalpath: 'c:\inetpub\wwwroot\'
 
-- name: Ensure App ApplicationPool is present
-  win_dsc:
-    resource_name: xWebAppPool
-    ensure: present
-    name: app
-    state: started
-
 - name: Ensure App Web Site is present
   win_dsc:
     resource_name: xWebSite
@@ -47,7 +40,8 @@
       - protocol: http
         port: 80
         ipaddress: '*'
-
+    applicationpool: app
+    
 - name: Ensure App Web Site Module is well configured
   win_dsc:
     resource_name: xIISModule
