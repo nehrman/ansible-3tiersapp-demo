@@ -1,8 +1,8 @@
 ---
-- name: Ensure Default Web Site is not present
-  win_iis_website:
-    name: 'Default Web Site'
-    state: absent
+# - name: Ensure Default Web Site is not present
+#   win_iis_website:
+#     name: 'Default Web Site'
+#     state: absent
 
 - name: Ensure App Web Site directory is present
   win_file:
