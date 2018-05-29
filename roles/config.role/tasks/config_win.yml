@@ -17,7 +17,6 @@
       - 'c:\python36\Scripts'
 
 - name: Ensure Python Modules are present
-  win_shell: pip install flask wfastcgi flask_uploads wtforms keras tensorflow numpy imutils opencv-python
+  win_shell: creates="c:\requirements_ok.txt" pip install flask wfastcgi flask_uploads wtforms keras tensorflow numpy imutils opencv-python
   args:
     chdir: 'c:\python36\Scripts'
-  create_file: 'c:\python36\requirements_ok.txt'
