@@ -12,10 +12,10 @@
 - name: Unzip xWebAdministration DSC module
   win_unzip:
     src: 'c:\xWebAdministration_1.3.2.4.zip'
-    dest: 'c:\ProgramFiles\WindowsPowerShell\Modules'
-    creates: 'c:\ProgramFiles\WindowsPowerShell\Modules\xWebAdministration_1.3.2.4'
+    dest: 'c:\ProgramFiles\WindowsPowerShell\Modules\'
+    # creates: 'c:\ProgramFiles\WindowsPowerShell\Modules\xWebAdministration_1.3.2.4'
     delete_archive: yes
-    
+
 - name: Ensure App Web Site directory is present
   win_file:
     path: 'c:\app\app'
