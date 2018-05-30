@@ -60,7 +60,7 @@
     SiteName: app
     ModuleType: FastCgiModule
 
-- name: Ensure Key/Value are well configured for App
+- name: Ensure Key/Value Env are well configured for App
   win_dsc:
     resource_name: xWebConfigKeyValue
     ensure: present
