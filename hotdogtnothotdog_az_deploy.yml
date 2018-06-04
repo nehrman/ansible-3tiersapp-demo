@@ -5,12 +5,38 @@
 
   tasks:
 
-    - name: Ensure Pre Reqs Packages are present
-      include_role:
-        name: config.role
-        tasks_from: config.yml
+    - name: Deploy Apps on Linux VMs
+      block:
+        - name: Ensure Pre Reqs Packages are present on Linux VMs
+          include_role:
+            name: config.role
+            tasks_from: config_lin.yml
 
-    - name: Ensure App is present
-      include_role:
-        name: hdnhd.role
-        tasks_from: install_app.yml
+        - name: Ensure App is present
+          include_role:
+            name: hdnhd.role
+            tasks_from: install_linapp.yml
+      when: ansible_os_family == "RedHat"
+
+    - name: Deploy Apps on Windows VMs
+      block:
+        - name: Ensure Pre Reqs Packages are present on Windows VMs
+          include_role:
+            name: config.role
+            tasks_from: config_win.yml
+
+        - name: Ensure IIS is present
+          include_role:
+            name: iis.role
+            tasks_from: install_iis.yml
+
+        - name: Ensure IIS is configured
+          include_role:
+            name: iis.role
+            tasks_from: config_iis.yml
+          
+        - name: Ensure App is present
+          include_role:
+            name: hdnhd.role
+            tasks_from: install_app.yml
+      when: ansible_os_family == "Windows"
