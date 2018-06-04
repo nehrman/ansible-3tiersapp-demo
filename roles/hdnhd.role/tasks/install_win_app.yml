@@ -1,25 +1,20 @@
 ---
-- name: create temporary directory to get app
-  win_tempfile:
-    state: directory
-    suffix: app
-  register: r_tempfile
-  connection: local
-  run_once: yes
-  become: no
+# - name: create temporary directory to get app
+#   win_tempfile:
+#     state: directory
+#     suffix: app
+#   register: r_tempfile
+#   connection: local
+#   run_once: yes
+#   become: no
 
-- name: git clone the app
-  git:
-    repo: "{{ app }}"
-    version: "{{ ver }}"
-    dest: "{{ r_tempfile.path }}"
-  connection: local
-  run_once: yes
-  become: no
-
-- name: copy app to nodes
-  win_copy:
-    src: "{{ r_tempfile.path }}/"
-    dest: c:\app\
-  become: yes
+- name: Git clone the app
+  win_shell: cd c:\app && git clone "{{ app }}" . && git checkout tags/"{{ ver }}"
   notify: restart iis
+
+# - name: copy app to nodes
+#   win_copy:
+#     src: "{{ r_tempfile.path }}/"
+#     dest: c:\app\
+#   become: yes
+#   notify: restart iis
