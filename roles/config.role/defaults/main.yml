@@ -8,4 +8,7 @@ packages:
     dir: 'c:\git\'
     allusers: 1
     version: '2.17.0'
-    
+  vcredist2015:
+    dir: 'c:\program files\'
+    allusers: 1
+    version: '14.0.24215.20170201'
