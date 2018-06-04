@@ -1,6 +1,6 @@
 ---
 - name: create temporary directory to get app
-  tempfile:
+  win_tempfile:
     state: directory
     suffix: app
   register: r_tempfile
