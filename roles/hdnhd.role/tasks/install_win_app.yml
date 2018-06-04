@@ -22,17 +22,4 @@
     src: "{{ r_tempfile.path }}/"
     dest: /app/
   become: yes
-
-- name: pip install requirements
-  pip:
-    requirements: /app/requirements.txt
-    extra_args: --no-cache-dir
-  become: yes
-
-- name: start gunicorn
-  command: nohup gunicorn -b 0.0.0.0:80 app:app &
-  args:
-    chdir: /app/app
-  async: 1000
-  poll: 0
-  become: yes
+  notify: restart iis
