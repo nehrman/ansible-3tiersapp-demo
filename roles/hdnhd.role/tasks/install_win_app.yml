@@ -12,6 +12,7 @@
   args:
     chdir: "{{ r_tempfile.path }}"
     executable: cmd
+  run_once: yes
   notify: restart iis
 
 - name: copy app to nodes
