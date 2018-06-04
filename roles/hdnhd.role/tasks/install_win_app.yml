@@ -21,4 +21,4 @@
   win_copy:
     src: "{{ r_tempfile.path }}/"
     dest: c:\app\
-  notify: restart iis
+  notify: "restart iis web servers"
