@@ -18,8 +18,8 @@
   become: no
 
 - name: copy app to nodes
-  copy:
+  win_copy:
     src: "{{ r_tempfile.path }}/"
-    dest: /app/
+    dest: "c:\\app\\"
   become: yes
   notify: restart iis
