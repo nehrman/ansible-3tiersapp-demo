@@ -10,9 +10,9 @@
 
 - name: Git clone the app
   win_shell: git clone "{{ app }}" . && git checkout tags/"{{ ver }}"
-    args:
-      chdir: c:\app
-      executable: cmd
+  args:
+    chdir: c:\app
+    executable: cmd
   notify: restart iis
 
 # - name: copy app to nodes
