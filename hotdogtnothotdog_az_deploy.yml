@@ -15,7 +15,7 @@
         - name: Ensure App is present
           include_role:
             name: hdnhd.role
-            tasks_from: install_linapp.yml
+            tasks_from: install_lin_app.yml
       when: ansible_os_family == "RedHat"
 
     - name: Deploy Apps on Windows VMs
@@ -34,9 +34,9 @@
           include_role:
             name: iis.role
             tasks_from: config_iis.yml
-          
+
         - name: Ensure App is present
           include_role:
             name: hdnhd.role
-            tasks_from: install_app.yml
+            tasks_from: install_win_app.yml
       when: ansible_os_family == "Windows"
