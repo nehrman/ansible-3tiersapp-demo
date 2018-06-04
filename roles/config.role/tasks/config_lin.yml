@@ -13,6 +13,7 @@
   yum:
     name: epel-release
     state: latest
+  become: yes
 
 - name: Ensure Pre Reqs Packages are present
   yum:
@@ -23,3 +24,4 @@
     - libSM
     - libXext
     - libXrender
+  become: yes
