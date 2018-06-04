@@ -8,8 +8,6 @@
       - InstallAllUsers: "{{ item.value.allusers }}"
     state: present
   loop: "{{ lookup('dict',packages)}}"
-  become: yes
-  become_method: runas
 
 - name: Ensure Environment Variables are set correctly
   win_path:
