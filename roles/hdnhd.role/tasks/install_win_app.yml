@@ -20,6 +20,6 @@
 - name: copy app to nodes
   win_copy:
     src: "{{ r_tempfile.path }}/"
-    dest: "c:\\app\\"
+    dest: c:\app\
   become: yes
   notify: restart iis
