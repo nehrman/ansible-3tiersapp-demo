@@ -1,6 +1,7 @@
 ---
 - name: Deploy Hot Dog Not Hot Dog App
   hosts: application_web
+  become: yes
 
   tasks:
 
