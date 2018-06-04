@@ -1,6 +1,6 @@
 ---
 - name: restart iis
   win_service:
-    name: web-server
+    name: w3svc
     state: restarted
   listen: "restart iis web servers"
