@@ -4,8 +4,8 @@
     name: "{{ item.key }}"
     version: "{{ item.value.version }}"
     install_args:
-      - TargetDir: "{{ item.value.dir | default('') }}"
-      - InstallAllUsers: "{{ item.value.allusers | default('') }}"
+      - TargetDir: "{{ item.value.dir }}"
+      - InstallAllUsers: "{{ item.value.allusers }}"
     state: present
   loop: "{{ lookup('dict',packages)}}"
 
