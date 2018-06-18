@@ -6,5 +6,5 @@ packages:
     version: '3.6.5'
   git:
     dir: 'c:\git\'
-    # allusers: 1
-    # version: '2.17.0'
+    allusers: 1
+    version: '2.17.0'
