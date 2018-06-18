@@ -22,6 +22,6 @@
     state: directory
 
 - name: Ensure Python Modules are present
-  win_shell: pip install flask wfastcgi flask_wtf flask_uploads wtforms keras tensorflow numpy imutils opencv-python >> c:\logs\requirements_ok.log
+  win_shell: pip install flask wfastcgi flask_wtf flask_uploads wtforms keras tensorflow numpy imutils opencv-python boto3 azure-storage >> c:\logs\requirements_ok.log
   args:
     creates: 'c:\logs\requirements_ok.log'
