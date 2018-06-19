@@ -1,6 +1,7 @@
 ---
 - name: Deploy Hot Dog Not Hot Dog App
   hosts: "{{ scope }}"
+  gather_fact: no
 
   tasks:
 
