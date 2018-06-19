@@ -2,3 +2,4 @@
 app: "https://github.com/automaticdavid/hot-dog-v1.git"
 ver: "v1.0"
 state: present
+object_store: "local"
