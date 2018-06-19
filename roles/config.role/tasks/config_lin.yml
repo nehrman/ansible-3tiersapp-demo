@@ -24,4 +24,5 @@
     - libSM
     - libXext
     - libXrender
+    - git
   become: yes
