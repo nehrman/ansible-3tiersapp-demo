@@ -46,6 +46,13 @@
   run_once: yes
   become: no
 
+- name: Set an environment variable for Web App
+  win_environment:
+    state: present
+    name: OBJECT_STORE
+    value: "{{ object_store }}"
+    level: machine
+
 - name: copy app to nodes
   win_copy:
     src: "{{ r_tempfile.path }}/"
