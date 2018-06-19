@@ -12,7 +12,7 @@
     repo: "{{ app }}"
     version: "{{ version }}"
     dest: "{{ r_tempfile.path }}"
-  delegate_to: localhost
+  # delegate_to: localhost
   run_once: yes
   become: no
   when:
@@ -22,7 +22,7 @@
   git:
     repo: "{{ app }}"
     dest: "{{ r_tempfile.path }}"
-  delegate_to: localhost
+  # delegate_to: localhost
   run_once: yes
   become: no
   when:
@@ -32,7 +32,7 @@
   file:
     path: "{{ r_tempfile.path }}/.git"
     state: absent
-  delegate_to: localhost
+  # delegate_to: localhost
   run_once: yes
   become: no
 
@@ -41,7 +41,7 @@
     url: "{{ bucket }}/model-{{ version }}.model"
     dest: "{{ r_tempfile.path }}/app/model/model.model"
     force: yes
-  delegate_to: localhost
+  # delegate_to: localhost
   run_once: yes
   become: no
 
@@ -110,6 +110,6 @@
   file:
     path: "{{ r_tempfile.path }}"
     state: absent
-  delegate_to: localhost
+  # delegate_to: localhost
   run_once: yes
   become: no
