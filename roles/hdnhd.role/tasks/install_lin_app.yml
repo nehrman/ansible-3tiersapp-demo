@@ -56,7 +56,6 @@
   copy:
     src: "{{ r_tempfile.path }}/"
     dest: /app/
-  delegate_to: localhost
   become: yes
 
 - name: pip install requirements
