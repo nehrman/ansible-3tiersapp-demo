@@ -8,20 +8,34 @@
   run_once: yes
   become: no
 
-- name: Git clone the app
+- name: git clone the app specific version
   git:
     repo: "{{ app }}"
-    version: "{{ ver }}"
+    version: "{{ version }}"
     dest: "{{ r_tempfile.path }}"
-  run_once: yes
   delegate_to: localhost
-  notify: "restart iis web servers"
+  run_once: yes
+  become: no
+  when:
+    - version is defined and version != ""
 
-- name: copy app to nodes
-  win_copy:
-    src: "{{ r_tempfile.path }}/"
-    dest: c:\app\
-  notify: "restart iis web servers"
+- name: git clone the app latest comit
+  git:
+    repo: "{{ app }}"
+    dest: "{{ r_tempfile.path }}"
+  delegate_to: localhost
+  run_once: yes
+  become: no
+  when:
+    - version is not defined or version == ""
+
+- name: Remove git history
+  file:
+    path: "{{ r_tempfile.path }}/.git"
+    state: absent
+  delegate_to: localhost
+  run_once: yes
+  become: no
 
 - name: Import Model from S3
   get_url:
@@ -31,3 +45,9 @@
   delegate_to: localhost
   run_once: yes
   become: no
+
+- name: copy app to nodes
+  win_copy:
+    src: "{{ r_tempfile.path }}/"
+    dest: c:\app\
+  notify: "restart iis web servers"
