@@ -1,0 +1,4 @@
+- src: https://github.com/nehrman/ansible-role-f5.git
+  scm: git
+  name: nehrman.ansible-role-f5
+  version: master
