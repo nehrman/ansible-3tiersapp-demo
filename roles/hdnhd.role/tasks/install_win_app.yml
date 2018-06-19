@@ -22,3 +22,12 @@
     src: "{{ r_tempfile.path }}/"
     dest: c:\app\
   notify: "restart iis web servers"
+
+- name: Import Model from S3
+  get_url:
+    url: "{{ bucket }}/model-{{ version }}.model"
+    dest: "{{ r_tempfile.path }}/app/model/model.model"
+    force: yes
+  delegate_to: localhost
+  run_once: yes
+  become: no
