@@ -1,0 +1,18 @@
+---
+- name: Deploy Hot Dog Not Hot Dog App
+  hosts: apps:&prod
+
+  tasks:
+
+    - name: Deploy Apps on Linux VMs
+      block:
+        - name: Ensure Pre Reqs Packages are present on Linux VMs
+          include_role:
+            name: config.role
+            tasks_from: config_lin.yml
+
+        - name: Ensure App is present
+          include_role:
+            name: hdnhd.role
+            tasks_from: install_lin_app.yml
+      when: ansible_os_family == "RedHat"
