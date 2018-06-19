@@ -50,7 +50,7 @@
     path: /app
     state: directory
     mode: 0755
-  become: no
+
 
 - name: copy app to nodes
   copy:
