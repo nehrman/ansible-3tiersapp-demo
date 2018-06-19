@@ -15,7 +15,7 @@
     dest: "{{ r_tempfile.path }}"
   run_once: yes
   delegate_to: localhost
-  notify: restart iis
+  notify: "restart iis web servers"
 
 - name: copy app to nodes
   win_copy:
