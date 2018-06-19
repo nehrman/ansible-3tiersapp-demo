@@ -58,3 +58,11 @@
     src: "{{ r_tempfile.path }}/"
     dest: c:\app\
   notify: "restart iis web servers"
+
+- name: Ensure permissions on directory are present
+  win_acl:
+    user: IUSR
+    path: c\app\
+    type: allow
+    rights: FullControl
+  notify: "restart iis web servers"
