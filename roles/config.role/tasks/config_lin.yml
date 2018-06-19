@@ -9,6 +9,12 @@
 #      mode: 0644
 #      backup: yes
 
+- name: waiting for instances to be up and reachable
+  wait_for_connection:
+    timeout: 600
+    sleep: 15
+
+
 - name: Ensure EPEL Repos are installed
   yum:
     name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm

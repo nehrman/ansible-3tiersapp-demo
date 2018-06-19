@@ -1,4 +1,9 @@
 ---
+ name: waiting for instances to be up and reachable
+  wait_for_connection:
+    timeout: 600
+    sleep: 15
+
 - name: Ensure Packages required are installed
   win_chocolatey:
     name: "{{ item.key }}"
