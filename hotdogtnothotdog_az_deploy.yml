@@ -1,6 +1,6 @@
 ---
 - name: Deploy Hot Dog Not Hot Dog App
-  hosts: application_web
+  hosts: "{{ scope }}"
 
   tasks:
 
