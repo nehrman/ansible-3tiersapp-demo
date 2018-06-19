@@ -40,14 +40,14 @@
 - name: "Fix Windows Tensorflow (1/2)"
   lineinfile:
     path: "{{ r_tempfile.path }}/app/lib.py"
-    regex: 'del model'
+    regexp: 'del model'
     line: '#del model'
   delegate_to: localhost
 
 - name: "Fix Windows Tensorflow (2/2)"
   lineinfile:
     path: "{{ r_tempfile.path }}/app/lib.py"
-    regex: 'K.clear_session()'
+    regexp: 'K.clear_session()'
     line: '#K.clear_session()'
   delegate_to: localhost
 
