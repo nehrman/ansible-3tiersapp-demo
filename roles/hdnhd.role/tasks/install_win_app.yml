@@ -19,7 +19,7 @@
   when:
     - version is defined and version != ""
 
-- name: git clone the app latest comit
+- name: git clone the app latest commit
   git:
     repo: "{{ app }}"
     dest: "{{ r_tempfile.path }}"
@@ -36,6 +36,18 @@
   delegate_to: localhost
   run_once: yes
   become: no
+
+- name: "Fix Windows Tensorflow (1/2)"
+  lineinfile:
+    path: "{{ r_tempfile.path }}"/app/lib.py
+    regex: 'del model'
+    line: '#del model'
+
+- name: "Fix Windows Tensorflow (2/2)"
+  lineinfile:
+    path: "{{ r_tempfile.path }}"/app/lib.py
+    regex: 'K.clear_session()'
+    line: '#K.clear_session()'
 
 - name: Import Model from S3
   get_url:
