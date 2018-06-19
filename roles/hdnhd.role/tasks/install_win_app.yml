@@ -42,12 +42,14 @@
     path: "{{ r_tempfile.path }}/app/lib.py"
     regex: 'del model'
     line: '#del model'
+  delegate_to: localhost
 
 - name: "Fix Windows Tensorflow (2/2)"
   lineinfile:
     path: "{{ r_tempfile.path }}/app/lib.py"
     regex: 'K.clear_session()'
     line: '#K.clear_session()'
+  delegate_to: localhost
 
 - name: Import Model from S3
   get_url:
@@ -61,9 +63,10 @@
 - name: Set an environment variable for Web App
   win_environment:
     state: present
-    name: OBJECT_STORE
-    value: "{{ object_store }}"
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
     level: machine
+  with_items: "{{ env_windows }}"
 
 - name: copy app to nodes
   win_copy:

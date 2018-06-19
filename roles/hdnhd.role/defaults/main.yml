@@ -11,3 +11,12 @@ blob_account: '{{ az_stor_account }}'
 blob_key: '{{ az_key }}'
 blob_container: results
 object_store: s3
+env_windows:
+  - name: OBJECT_STORE
+    value: "{{ object_store }}"
+  - name: BLOB_ACCOUNT
+    value: "{{ blob_account }}"
+  - name: BLOB_KEY
+    value: "{{ blob_key }}"
+  - name: BLOB_CONTAINER
+    value: "{{ blob_container }}"
