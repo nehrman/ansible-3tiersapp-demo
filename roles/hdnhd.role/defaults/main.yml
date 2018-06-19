@@ -1,5 +1,13 @@
 ---
-app: "https://github.com/automaticdavid/hot-dog-v1.git"
-ver: "v1.0"
+app: https://github.com/automaticdavid/demoapp.git
+version: v1.0
+bucket: https://s3-eu-west-1.amazonaws.com/dcl-hot-dog
 state: present
-object_store: "local"
+app_action: new
+results_bucket: dcl-hot-dog-results
+AWS_KEY: '{{ AWS_KEY}}'
+AWS_SECRET: '{{ AWS_SECRET}}'
+blob_account: '{{ az_stor_account }}'
+blob_key: '{{ az_key }}'
+blob_container: results
+object_store: s3
