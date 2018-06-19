@@ -2,7 +2,6 @@
 - name: Add Nodes to Load Balancer
   hosts: "{{ scope }}"
   connection: local
-  gather_fact: no
 
   tasks:
 
