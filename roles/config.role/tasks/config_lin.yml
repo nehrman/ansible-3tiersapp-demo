@@ -11,8 +11,8 @@
 
 - name: Ensure EPEL Repos are installed
   yum:
-    name: epel-release
-    state: latest
+    name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    state: present
   become: yes
 
 - name: Ensure Pre Reqs Packages are present
