@@ -1,6 +1,6 @@
 ---
 - name: Add Nodes to Load Balancer
-  hosts: localhost
+  hosts: "{{ scope }}"
   connection: local
   gather_facts: no
 
