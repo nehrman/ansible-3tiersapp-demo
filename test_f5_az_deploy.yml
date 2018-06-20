@@ -1,6 +1,6 @@
 ---
 - name: Add Nodes to Load Balancer
-  hosts: "{{ scope }}"
+  hosts: localhost
   connection: local
   gather_facts: no
 
@@ -10,4 +10,3 @@
       include_role:
         name: nehrman.ansible-role-f5
         tasks_from: add_node.yml
-      delegate_to : localhost
