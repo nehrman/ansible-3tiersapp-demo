@@ -60,13 +60,14 @@
   run_once: yes
   become: no
 
-- name: Set an environment variable for Web App
+- name: Set environment variables for Web App
   win_environment:
     state: present
     name: "{{ item.name }}"
     value: "{{ item.value }}"
     level: machine
   with_items: "{{ env_windows }}"
+  no_log: true
 
 - name: copy app to nodes
   win_copy:
