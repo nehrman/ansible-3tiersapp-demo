@@ -73,7 +73,7 @@
   win_copy:
     src: "{{ r_tempfile.path }}/"
     dest: c:\app\
-  notify: "restart iis web servers"
+#  notify: "restart iis web servers"
 
 - name: Ensure permissions on directory are present
   win_acl:

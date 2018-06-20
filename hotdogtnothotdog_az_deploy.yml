@@ -24,6 +24,11 @@
             name: config.role
             tasks_from: config_win.yml
 
+        - name: Ensure App is present
+          include_role:
+            name: hdnhd.role
+            tasks_from: install_win_app.yml
+
         - name: Ensure IIS is present
           include_role:
             name: iis.role
@@ -33,9 +38,4 @@
           include_role:
             name: iis.role
             tasks_from: config_iis.yml
-
-        - name: Ensure App is present
-          include_role:
-            name: hdnhd.role
-            tasks_from: install_win_app.yml
       when: ansible_os_family == "Windows"
