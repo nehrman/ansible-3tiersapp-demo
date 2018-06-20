@@ -1,6 +1,4 @@
 ---
-- name: restart iis
-  win_service:
-    name: w3svc
-    state: restarted
+- name: Reset iis
+  win_shell: iisreset.exe
   listen: "restart iis web servers"
