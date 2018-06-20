@@ -2,7 +2,8 @@
 - name: Add Nodes to Load Balancer
   hosts: "{{ scope }}"
   connection: local
-
+  gather_facts: no
+  
   tasks:
 
     - name: Ensure Nodes are present in F5 Load Balancer
