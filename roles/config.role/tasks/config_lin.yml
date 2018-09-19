@@ -21,3 +21,4 @@
   service:
     name: firewalld
     state: stopped
+  become: yes
