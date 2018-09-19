@@ -16,3 +16,8 @@
     - libXrender
     - git
   become: yes
+
+- name: Ensure Firewall is disabled for Demo
+  service:
+    name: firewalld
+    state: stopped
