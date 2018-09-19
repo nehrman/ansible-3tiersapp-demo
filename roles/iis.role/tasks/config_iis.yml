@@ -1,8 +1,8 @@
 ---
-# - name: Ensure Windows Powershell DSC Feature is present
-#   win_feature:
-#     name: dsc-service
-#     state: present
+- name: Ensure Windows Powershell DSC Feature is present
+  win_feature:
+    name: dsc-service
+    state: present
 
 - name: Download xWebAdministration DSC module
   win_get_url:
@@ -16,11 +16,11 @@
     # creates: 'c:\Program Files\WindowsPowerShell\Modules\xWebAdministration_1.3.2.4'
     delete_archive: yes
 
-- name: Ensure xWebAdministration DSC Module is present
-  win_psmodule:
-    name: xWebAdministration
-    repository: PSGallery
-    state: present
+# - name: Ensure xWebAdministration DSC Module is present
+#   win_psmodule:
+#     name: xWebAdministration
+#     repository: PSGallery
+#     state: present
 
 - name: Ensure App Web Site directory is present
   win_file:
