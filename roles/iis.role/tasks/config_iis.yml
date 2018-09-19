@@ -65,6 +65,7 @@
     verb: '*'
     SiteName: app
     ModuleType: FastCgiModule
+  notify: restart_iis
 
 - name: Ensure Key/Value Env are well configured for App
   win_dsc:
@@ -74,3 +75,4 @@
     key: 'WSGI_HANDLER'
     value: 'app.app'
     websitepath: 'iis:sites\app'
+  notify: restart_iis
